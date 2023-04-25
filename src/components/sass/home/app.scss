@@ -1,0 +1,108 @@
+.App {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 95vh;
+  width: 100%;
+  // cabeçalho
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      .icon-logo {
+        width: 3rem;
+      }
+    }
+  }
+  //   conteúdo da página
+  main {
+    width: 100%;
+    height: 85%;
+    // height: 100%;
+    .cont00 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      .options {
+        background-color: $color-2;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        height: 90%;
+        width: calc(100% - 400px);
+        .cont-input {
+          display: flex;
+          flex-flow: column;
+          gap: 0.5rem;
+          margin: 0 0 1rem;
+          label {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            .input-check {
+              appearance: none;
+              background-color: $color-4;
+              border: 0.2rem solid $color-4;
+              border-radius: 0.2rem;
+              cursor: pointer;
+              padding: 0.5rem;
+              transition: 0.3s;
+            }
+            .input-check:checked {
+              padding: 0.6rem;
+              background-image: url(/check.png);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+            }
+            .input-check:disabled {
+              opacity: 0.4;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Rodapé da página
+  footer {
+    p {
+      text-align: center;
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+
+      a {
+        color: $color-2;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .App {
+    height: auto;
+    gap: 1.5rem;
+
+    main {
+      .cont00 {
+        flex-flow: column;
+        gap: 1.5rem;
+        .options {
+          width: 100%;
+        }
+      }
+    }
+    footer {
+      position: relative;
+      p {
+        position: initial;
+      }
+    }
+  }
+}
